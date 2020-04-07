@@ -1,12 +1,40 @@
-# docker-compose-laravel
-A pretty simplified docker-compose workflow that sets up a LEMP network of containers for local Laravel development. You can view the full article that inspired this repo [here](https://medium.com/@aschmelyun).
+# Laravel|PHP|MySQL workflow in Docker
 
+- **Repository:**
+	- A docker-compose workflow for local Laravel development.
+- **Stack:** Laravel, PHP, MySQL.
+- **Services:** Nginx, MySQL, NPM.
+- **Year:** 2020.
 
-## Usage
+A pretty simplified docker-compose workflow that sets up a LEMP network of containers for local Laravel development.
 
-To get started, make sure you have [Docker installed](https://docs.docker.com/docker-for-mac/install/) on your system, and then clone this repository.
+## Step 1. Clone the repository.
 
-First add your entire Laravel project to the `src` folder, then open a terminal and from this cloned respository's root run `docker-compose up -d --build`. Open up your browser of choice to [http://localhost:8080](http://localhost:8080) and you should see your Laravel app running as intended. **Your Laravel app needs to be in the src directory first before bringing the containers up, otherwise the artisan container will not build, as it's missing the appropriate file.** 
+Browse your projects location and run:
+
+```bash
+git git@github.com:diegoulloao/laravel-docker-startpoint.git project-name
+```
+
+## Step 2. Add Laravel files.
+
+First add your entire Laravel project to the `src` folder or browse in and run:
+
+```
+laravel new
+```
+
+## Step 3. Run the service.
+
+Run:
+
+```
+docker-compose up --build
+```
+
+Open up your browser of choice to [http://localhost:8080](http://localhost:8080) and you should see your Laravel app running as intended. **Your Laravel app needs to be in the src directory first before bringing the containers up, otherwise the artisan container will not build, as it's missing the appropriate file.**
+
+---
 
 **New:** Three new containers have been added that handle Composer, NPM, and Artisan commands without having to have these platforms installed on your local computer. Use the following command templates from your project root, modifiying them to fit your particular use case:
 
@@ -22,3 +50,9 @@ Containers created and their ports (if used) are as follows:
 - **npm**
 - **composer**
 - **artisan**
+
+--
+
+Forked from https://github.com/aschmelyun/docker-compose-laravel
+
+**@aschmelyun · @diegoulloao · 2020**
