@@ -13,7 +13,7 @@ A pretty simplified docker-compose workflow that sets up a LEMP network of conta
 Browse your projects location and run:
 
 ```bash
-git git@github.com:diegoulloao/laravel-docker-startpoint.git project-name
+git clone https://github.com/diegoulloao/laravel-docker-startpoint.git project-name
 ```
 
 ## Step 2. Add Laravel files.
@@ -40,7 +40,7 @@ Open up your browser of choice to [http://localhost:8080](http://localhost:8080)
 
 - `docker-compose run --rm composer update`
 - `docker-compose run --rm npm run dev`
-- `docker-compose run --rm artisan migrate` 
+- `docker-compose run --rm artisan migrate`
 
 Containers created and their ports (if used) are as follows:
 
@@ -50,6 +50,8 @@ Containers created and their ports (if used) are as follows:
 - **npm**
 - **composer**
 - **artisan**
+
+**DB_HOST** must be **Gateway IP** from the mysql container. You can get it by running `docker inspect`.
 
 --
 
